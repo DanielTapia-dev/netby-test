@@ -182,7 +182,11 @@ Esto garantiza **despliegues seguros** y reversibles.
 
 ---
 
-## 🗺️ Endpoints útiles (ejemplos)
+## 🗺️ Endpoints locles (ejemplos)
+
+- App: `http://9.234.136.252:8080/`
+- Hello: `http://9.234.136.252:8080/hello`
+- Health: `http://9.234.136.252:8080/actuator/health`
 
 - App: `http://localhost:8080/`
 - Hello: `http://localhost:8080/hello`
