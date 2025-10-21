@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: default
+  datasource:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: db
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/appdb}
+    username: ${SPRING_DATASOURCE_USERNAME:appuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:apppass}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
